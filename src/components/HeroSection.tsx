@@ -10,7 +10,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center pt-20">
+    <section id="accueil" className="relative min-h-screen flex items-center pt-20" role="banner">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -24,7 +24,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 leading-tight">
             Votre passerelle vers le monde –{" "}
             <span className="text-primary-light">Importez sans stress</span>, 
             nous gérons tout !

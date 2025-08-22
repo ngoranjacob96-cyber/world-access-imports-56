@@ -37,7 +37,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-foreground">
             Besoin d'importer vos produits depuis l'étranger ?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
