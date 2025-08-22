@@ -45,6 +45,12 @@ const Header = () => {
               Avis Clients
             </button>
             <button 
+              onClick={() => scrollToSection('faq')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              FAQ
+            </button>
+            <button 
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
@@ -92,6 +98,12 @@ const Header = () => {
                 className="text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
               >
                 Avis Clients
+              </button>
+              <button 
+                onClick={() => scrollToSection('faq')}
+                className="text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
+              >
+                FAQ
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
