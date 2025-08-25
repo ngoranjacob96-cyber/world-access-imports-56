@@ -77,7 +77,7 @@ const ChatBot = () => {
       // Message de bienvenue
       const welcomeMessage: Message = {
         id: 1,
-        text: "Bonjour ! 👋 Je suis l'assistant virtuel de N'Guess Global Imports. Comment puis-je vous aider aujourd'hui ?",
+        text: "Bonjour ! 👋 Je suis Flora, votre assistante virtuelle de N'Guess Global Imports. Comment puis-je vous aider aujourd'hui ?",
         isUser: false,
         timestamp: new Date()
       };
@@ -139,7 +139,7 @@ const ChatBot = () => {
           <div className="bg-primary text-white p-4 rounded-t-lg flex justify-between items-center">
             <div className="flex items-center gap-2">
               <Bot size={20} />
-              <span className="font-semibold">Assistant N'Guess</span>
+              <span className="font-semibold">Flora</span>
             </div>
             <Button
               onClick={() => setIsOpen(false)}
