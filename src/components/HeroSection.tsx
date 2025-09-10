@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <section id="accueil" className="relative min-h-screen flex items-center pt-20" role="banner">
       {/* Video Background */}
-      <div className="hero-video-bg absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
           muted
@@ -21,19 +21,30 @@ const HeroSection = () => {
           preload="metadata"
           className="w-full h-full object-cover"
           poster={heroImage}
+          onError={(e) => {
+            // Si la vidéo échoue, on cache la vidéo et affiche l'image fallback
+            e.currentTarget.style.display = 'none';
+            const fallbackImg = e.currentTarget.nextElementSibling as HTMLImageElement;
+            if (fallbackImg) fallbackImg.style.display = 'block';
+          }}
         >
-          <source src="/videos/water-waves-bg.mp4" type="video/mp4" />
-          {/* Fallback image si la vidéo échoue */}
-          <img 
-            src={heroImage} 
-            alt="Commerce international et importation" 
-            className="w-full h-full object-cover"
-          />
+          <source src="https://videos.pexels.com/video-files/857195/857195-hd_1920_1080_30fps.mp4" type="video/mp4" />
         </video>
+        
+        {/* Fallback image */}
+        <img 
+          src={heroImage} 
+          alt="Commerce international et importation" 
+          className="w-full h-full object-cover"
+          style={{ display: 'none' }}
+        />
+        
+        {/* Water animation overlay pour améliorer l'effet */}
+        <div className="absolute inset-0 water-animation opacity-20"></div>
       </div>
 
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/40 via-black/50 to-black/60"></div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/30 via-black/40 to-black/50"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-20">
