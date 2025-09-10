@@ -11,24 +11,32 @@ const HeroSection = () => {
 
   return (
     <section id="accueil" className="relative min-h-screen flex items-center pt-20" role="banner">
-      {/* Background Image with Water Animation */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <img 
-          src={heroImage} 
-          alt="Commerce international et importation" 
+      {/* Video Background */}
+      <div className="hero-video-bg absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
           className="w-full h-full object-cover"
-        />
-        
-        {/* Water animation overlay */}
-        <div className="absolute inset-0 water-animation opacity-30"></div>
-        <div className="absolute inset-0 water-animation-2 opacity-20"></div>
-        
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+          poster={heroImage}
+        >
+          <source src="/videos/water-waves-bg.mp4" type="video/mp4" />
+          {/* Fallback image si la vidéo échoue */}
+          <img 
+            src={heroImage} 
+            alt="Commerce international et importation" 
+            className="w-full h-full object-cover"
+          />
+        </video>
       </div>
 
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/40 via-black/50 to-black/60"></div>
+
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 leading-tight">
             Votre passerelle vers le monde –{" "}
