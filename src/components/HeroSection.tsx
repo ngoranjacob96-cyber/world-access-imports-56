@@ -11,13 +11,19 @@ const HeroSection = () => {
 
   return (
     <section id="accueil" className="relative min-h-screen flex items-center pt-20" role="banner">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image with Water Animation */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
           src={heroImage} 
           alt="Commerce international et importation" 
           className="w-full h-full object-cover"
         />
+        
+        {/* Water animation overlay */}
+        <div className="absolute inset-0 water-animation opacity-30"></div>
+        <div className="absolute inset-0 water-animation-2 opacity-20"></div>
+        
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
