@@ -48,50 +48,58 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-20">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 leading-tight">
-            Votre passerelle vers le monde –{" "}
-            <span className="text-primary-light">Importez sans stress</span>, 
-            nous gérons tout !
-          </h1>
+        <div className="max-w-5xl mx-auto text-center text-white">
+          <div className="animate-slide-up">
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight">
+              <span className="block mb-2">Votre passerelle vers</span>
+              <span className="block bg-gradient-to-r from-white via-primary-light to-accent-foreground bg-clip-text text-transparent animate-gradient">
+                le monde entier
+              </span>
+              <span className="block text-3xl md:text-5xl mt-4 text-gray-200 font-medium">
+                Importez sans stress, nous gérons tout !
+              </span>
+            </h1>
+          </div>
           
-          <p className="text-xl md:text-2xl mb-8 text-gray-200">
-            Des produits du monde, livrés chez vous en toute confiance
-          </p>
+          <div className="animate-zoom-in">
+            <p className="text-xl md:text-2xl mb-10 text-gray-100 max-w-3xl mx-auto leading-relaxed">
+              Des produits du monde entier, livrés chez vous en toute confiance avec un service premium et personnalisé
+            </p>
+          </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-slide-up">
             <Button 
               variant="cta" 
               size="lg"
               onClick={scrollToContact}
-              className="text-lg px-8 py-4 h-auto"
+              className="text-lg px-10 py-5 h-auto hover-glow text-white font-bold border-2 border-accent shadow-cta"
             >
-              Importer maintenant
+              ✨ Importer maintenant
             </Button>
             
             <Button 
               variant="outline-white" 
               size="lg"
               onClick={scrollToContact}
-              className="text-lg px-8 py-4 h-auto"
+              className="text-lg px-10 py-5 h-auto glass-effect hover-lift"
             >
-              En savoir plus
+              📋 Demander un devis
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/20">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-light mb-2">500+</div>
-              <div className="text-gray-300">Colis importés</div>
+          {/* Premium Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-12">
+            <div className="text-center glass-effect rounded-2xl p-8 hover-lift animate-float">
+              <div className="text-5xl font-bold bg-gradient-to-r from-accent to-primary-light bg-clip-text text-transparent mb-3">500+</div>
+              <div className="text-gray-200 text-lg font-medium">Colis importés avec succès</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-light mb-2">100%</div>
-              <div className="text-gray-300">Clients satisfaits</div>
+            <div className="text-center glass-effect rounded-2xl p-8 hover-lift animate-float" style={{ animationDelay: '0.5s' }}>
+              <div className="text-5xl font-bold bg-gradient-to-r from-primary-light to-secondary bg-clip-text text-transparent mb-3">100%</div>
+              <div className="text-gray-200 text-lg font-medium">Clients satisfaits garantis</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-light mb-2">24/7</div>
-              <div className="text-gray-300">Support client</div>
+            <div className="text-center glass-effect rounded-2xl p-8 hover-lift animate-float" style={{ animationDelay: '1s' }}>
+              <div className="text-5xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent mb-3">24/7</div>
+              <div className="text-gray-200 text-lg font-medium">Support premium dédié</div>
             </div>
           </div>
         </div>

@@ -39,22 +39,27 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Premium Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="border-0 shadow-elegant hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                  <service.icon className="w-8 h-8 text-primary" />
+            <Card key={index} className="border-0 shadow-premium hover-lift glass-effect animate-zoom-in group overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }}>
+              <CardContent className="p-8 text-center relative">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary via-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-6 hover-glow group-hover:scale-110 transition-all duration-300">
+                  <service.icon className="w-10 h-10 text-white" />
                 </div>
                 
-                <h3 className="text-xl font-bold mb-4 text-foreground">
+                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
                   {service.description}
                 </p>
+
+                {/* Shimmer effect on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+                </div>
               </CardContent>
             </Card>
           ))}

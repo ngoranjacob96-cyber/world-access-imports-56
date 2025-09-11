@@ -17,33 +17,40 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 20%;
 
-    /* Brand colors - Rouge N'Guess */
-    --primary: 352 96% 44%;  /* #E30613 */
+    /* Premium brand colors - Modern & Professional */
+    --primary: 218 95% 54%;  /* Modern blue */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 352 96% 85%;
-    --primary-dark: 352 96% 35%;
+    --primary-light: 218 95% 70%;
+    --primary-dark: 218 95% 35%;
+    --primary-glow: 218 95% 75%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 20%;
+    --secondary: 270 75% 60%;  /* Purple accent */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 220 13% 97%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 352 96% 97%;
-    --accent-foreground: 352 96% 44%;
+    --accent: 38 92% 50%;  /* Golden accent */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 352 96% 44%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 218 95% 54%;
 
-    /* Custom design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(352 96% 44%), hsl(352 96% 35%));
+    /* Premium design tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(218 95% 54%) 0%, hsl(270 75% 60%) 50%, hsl(38 92% 50%) 100%);
+    --premium-gradient: linear-gradient(135deg, hsl(218 95% 54% / 0.1) 0%, hsl(270 75% 60% / 0.1) 50%, hsl(38 92% 50% / 0.1) 100%);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
     --section-bg: 0 0% 98%;
-    --shadow-elegant: 0 10px 30px -10px hsl(352 96% 44% / 0.1);
-    --shadow-cta: 0 4px 20px hsl(352 96% 44% / 0.3);
+    --shadow-elegant: 0 20px 60px -15px hsl(218 95% 54% / 0.25);
+    --shadow-premium: 0 25px 80px -20px hsl(270 75% 60% / 0.3);
+    --shadow-cta: 0 10px 40px -10px hsl(38 92% 50% / 0.4);
+    --glow-primary: 0 0 40px hsl(218 95% 54% / 0.3);
+    --glow-accent: 0 0 60px hsl(38 92% 50% / 0.4);
     
     --radius: 0.75rem;
 
@@ -127,6 +134,17 @@ All colors MUST be HSL.
     background: var(--hero-gradient);
   }
 
+  .premium-gradient {
+    background: var(--premium-gradient);
+  }
+
+  .glass-effect {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
   .section-bg {
     background: hsl(var(--section-bg));
   }
@@ -135,8 +153,127 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-elegant);
   }
 
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
   .shadow-cta {
     box-shadow: var(--shadow-cta);
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  /* Modern premium animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes zoom-in {
+    0% { 
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-zoom-in {
+    animation: zoom-in 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Premium hover effects */
+  .hover-lift {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-premium);
+  }
+
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--glow-accent);
+    transform: scale(1.05);
+  }
+
+  .hover-tilt {
+    transition: all 0.3s ease;
+  }
+
+  .hover-tilt:hover {
+    transform: rotate(2deg) scale(1.02);
   }
 
   /* Water Animation Effects */
