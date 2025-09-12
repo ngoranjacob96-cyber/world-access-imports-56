@@ -17,21 +17,25 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 20%;
 
-    /* Premium brand colors - Modern & Professional */
-    --primary: 218 95% 54%;  /* Modern blue */
+    /* Premium international logistics colors */
+    --primary: 214 90% 48%;  /* Professional deep blue */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 218 95% 70%;
-    --primary-dark: 218 95% 35%;
-    --primary-glow: 218 95% 75%;
+    --primary-light: 214 85% 65%;
+    --primary-dark: 214 95% 30%;
+    --primary-glow: 214 85% 70%;
 
-    --secondary: 270 75% 60%;  /* Purple accent */
+    --secondary: 4 85% 50%;  /* Corporate red */
     --secondary-foreground: 0 0% 100%;
+    --secondary-light: 4 80% 65%;
+    --secondary-dark: 4 90% 35%;
 
     --muted: 220 13% 97%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 38 92% 50%;  /* Golden accent */
+    --accent: 45 95% 55%;  /* Premium gold */
     --accent-foreground: 0 0% 100%;
+    --accent-light: 45 90% 70%;
+    --accent-dark: 45 100% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -40,17 +44,22 @@ All colors MUST be HSL.
     --input: 220 13% 91%;
     --ring: 218 95% 54%;
 
-    /* Premium design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(218 95% 54%) 0%, hsl(270 75% 60%) 50%, hsl(38 92% 50%) 100%);
-    --premium-gradient: linear-gradient(135deg, hsl(218 95% 54% / 0.1) 0%, hsl(270 75% 60% / 0.1) 50%, hsl(38 92% 50% / 0.1) 100%);
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
+    /* Premium design tokens - International logistics theme */
+    --hero-gradient: linear-gradient(135deg, hsl(214 90% 48%) 0%, hsl(4 85% 50%) 50%, hsl(45 95% 55%) 100%);
+    --premium-gradient: linear-gradient(135deg, hsl(214 90% 48% / 0.08) 0%, hsl(4 85% 50% / 0.08) 50%, hsl(45 95% 55% / 0.08) 100%);
+    --corporate-gradient: linear-gradient(135deg, hsl(214 90% 48% / 0.95) 0%, hsl(4 85% 50% / 0.95) 100%);
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-bg-dark: rgba(20, 40, 80, 0.25);
+    --glass-border-dark: rgba(255, 255, 255, 0.1);
     --section-bg: 0 0% 98%;
-    --shadow-elegant: 0 20px 60px -15px hsl(218 95% 54% / 0.25);
-    --shadow-premium: 0 25px 80px -20px hsl(270 75% 60% / 0.3);
-    --shadow-cta: 0 10px 40px -10px hsl(38 92% 50% / 0.4);
-    --glow-primary: 0 0 40px hsl(218 95% 54% / 0.3);
-    --glow-accent: 0 0 60px hsl(38 92% 50% / 0.4);
+    --section-alt-bg: linear-gradient(145deg, hsl(214 95% 98%) 0%, hsl(4 20% 98%) 100%);
+    --shadow-elegant: 0 25px 80px -20px hsl(214 90% 48% / 0.25);
+    --shadow-premium: 0 30px 100px -25px hsl(4 85% 50% / 0.3);
+    --shadow-cta: 0 15px 50px -15px hsl(45 95% 55% / 0.4);
+    --glow-primary: 0 0 50px hsl(214 90% 48% / 0.3);
+    --glow-secondary: 0 0 60px hsl(4 85% 50% / 0.3);
+    --glow-accent: 0 0 70px hsl(45 95% 55% / 0.4);
     
     --radius: 0.75rem;
 
